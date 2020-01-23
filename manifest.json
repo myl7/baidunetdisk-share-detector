@@ -1,7 +1,11 @@
 {
   "manifest_version": 2,
   "name": "Share Detector",
-  "version": "0.1.0-snapshot",
-  "default_locale": "zh-cn",
-  "description": "Chrome extension to detect share links by selecting 通过划选探测分享链接"
+  "version": "0.1.0",
+  "description": "Chrome extension to detect share links by selecting 通过划选探测分享链接",
+  "homepage_url": "https://github.com/myl7/share-detector",
+  "background": {
+    "scripts": ["bundle.js"]
+  },
+  "permissions": ["contextMenus", "tabs", "notifications"]
 }
