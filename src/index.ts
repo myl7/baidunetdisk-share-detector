@@ -10,7 +10,7 @@ chrome.contextMenus.create({
     } else {
       chrome.notifications.create({
         type: 'basic',
-        iconUrl: '',
+        iconUrl: '/icon_60x60.png',
         title: 'Failed to detect share links',
         message: '',
       });
