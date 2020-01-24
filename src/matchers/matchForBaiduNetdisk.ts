@@ -28,8 +28,8 @@ const matchForBaiduNetdisk = (text: string): BaiduNetdiskInfo | null => {
       complete: (matchedStr) => 'https://pan.baidu.com/' + matchedStr,
     },
     {
-      regExp: /s\/[-_0-9a-zA-Z]+/,
-      complete: (matchedStr) => matchedStr,
+      regExp: /\/[-_0-9a-zA-Z]+/,
+      complete: (matchedStr) => 'https://pan.baidu.com/s' + matchedStr,
     },
   ];
 
@@ -48,8 +48,8 @@ const matchForBaiduNetdisk = (text: string): BaiduNetdiskInfo | null => {
   let secret: string = '';
 
   const secretMatchers: SecretMatcher[] = [
-    /(?:[码][:：])[0-9a-z]{4}\b/,
-    /(?:[-_0-9a-zA-Z]{16,}\s+)[0-9a-z{4}]{4}\b/,
+    /(?<=[码][:：])[0-9a-z]{4}\b/,
+    /(?<=[-_0-9a-zA-Z]{16,}\s+)[0-9a-z{4}]{4}\b/,
     /\b[0-9a-z{4}]{4}\b/,
   ];
 

@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "Chrome extension to detect share links by selecting 通过划选探测分享链接",
   "scripts": {
-    "build": "webpack --config webpack/webpack.prod.js"
+    "build": "webpack --config webpack/webpack.prod.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,12 +22,18 @@
   "homepage": "https://github.com/myl7/share-detector",
   "devDependencies": {
     "@types/chrome": "0.0.92",
+    "@types/jest": "^24.9.1",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
+    "jest": "^25.1.0",
+    "ts-jest": "^25.0.0",
     "ts-loader": "^6.2.1",
     "typescript": "^3.7.5",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-merge": "^4.2.2"
+  },
+  "jest": {
+    "preset": "ts-jest"
   }
 }
