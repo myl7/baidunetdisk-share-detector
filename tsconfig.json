@@ -4,10 +4,9 @@
     "module": "esnext",
     "sourceMap": true,
     "outDir": "./dist",
-    "removeComments": true,
     "strict": true,
     "esModuleInterop": true,
+    "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
-  },
-  "include": ["src"]
+  }
 }
