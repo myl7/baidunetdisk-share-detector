@@ -1,7 +1,7 @@
 {
   "name": "baidunetdisk-share-detector",
   "version": "0.3.0",
-  "description": "通过选定一段文字以探测百度云分享链接",
+  "description": "百度云分享划选探测 | 通过选定一段文字以探测百度云分享链接",
   "scripts": {
     "build": "webpack --config webpack/webpack.prod.js",
     "test": "jest"

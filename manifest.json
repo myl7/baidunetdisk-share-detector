@@ -1,9 +1,9 @@
 {
   "manifest_version": 2,
-  "name": "Share Detector",
-  "version": "0.2.0",
-  "description": "Chrome extension to detect share links by selecting 通过划选探测分享链接",
-  "homepage_url": "https://github.com/myl7/share-detector",
+  "name": "百度云分享划选探测",
+  "version": "0.3.0",
+  "description": "通过选定一段文字以探测百度云分享链接",
+  "homepage_url": "https://github.com/myl7/baidunetdisk-share-detector",
   "icons": {
     "16": "icon_60x60.png",
     "48": "icon_60x60.png",
