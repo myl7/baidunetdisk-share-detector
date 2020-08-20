@@ -10,7 +10,7 @@ interface LinkMatcher {
 
 type SecretMatcher = RegExp;
 
-const matchForBaiduNetdisk = (text: string): BaiduNetdiskInfo | null => {
+const matcher = (text: string): BaiduNetdiskInfo | null => {
   const emojiFilters = [
     /(\ud83c[\udf00-\udfff])|(\ud83d[\udc00-\ude4f\ude80-\udeff])|[\u2600-\u2B55]/g,
     / ?#\([\u4e00-\u9fa5]+\) ?/g,
@@ -64,4 +64,4 @@ const matchForBaiduNetdisk = (text: string): BaiduNetdiskInfo | null => {
   return { url: url, secret: secret };
 };
 
-export default matchForBaiduNetdisk;
+export default matcher;

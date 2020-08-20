@@ -1,10 +1,10 @@
-import matchForBaiduNetdisk from './matchers/matchForBaiduNetdisk';
+import matcher from './matcher';
 
 chrome.contextMenus.create({
   title: 'Try to get the share link and secret',
   contexts: ['selection'],
-  onclick: (info, tab) => {
-    let baiduNetdiskInfo = matchForBaiduNetdisk(info.selectionText as string);
+  onclick: (info, _tab) => {
+    let baiduNetdiskInfo = matcher(info.selectionText as string);
     if (baiduNetdiskInfo !== null) {
       chrome.tabs.create({ url: baiduNetdiskInfo.url + '#' + baiduNetdiskInfo.secret });
     } else {
