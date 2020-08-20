@@ -18,7 +18,7 @@ module.exports = {
   },
   plugins: [new CleanWebpackPlugin(), new CopyPlugin([{ from: './manifest.json' }, { from: './images' }])],
   output: {
-    filename: 'bundle.js',
+    filename: 'index.js',
     path: path.resolve(path.dirname(__dirname), 'dist'),
   },
 };

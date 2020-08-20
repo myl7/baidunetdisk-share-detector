@@ -10,7 +10,7 @@
     "128": "icon_200x200.png"
   },
   "background": {
-    "scripts": ["bundle.js"]
+    "scripts": ["index.js"]
   },
   "permissions": ["contextMenus", "tabs", "notifications"]
 }
