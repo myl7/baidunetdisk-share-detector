@@ -1,25 +1,26 @@
 {
-  "name": "share-detector",
-  "version": "0.2.0",
-  "description": "Chrome extension to detect share links by selecting 通过划选探测分享链接",
+  "name": "baidunetdisk-share-detector",
+  "version": "0.3.0",
+  "description": "通过选定一段文字以探测百度云分享链接",
   "scripts": {
     "build": "webpack --config webpack/webpack.prod.js",
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/myl7/share-detector"
+    "url": "https://github.com/myl7/baidunetdisk-share-detector.git"
   },
   "keywords": [
+    "baidunetdisk",
     "share-link",
     "selecting"
   ],
   "author": "myl7",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/myl7/share-detector/issues"
+    "url": "https://github.com/myl7/baidunetdisk-share-detector/issues"
   },
-  "homepage": "https://github.com/myl7/share-detector",
+  "homepage": "https://github.com/myl7/baidunetdisk-share-detector",
   "devDependencies": {
     "@types/chrome": "0.0.92",
     "@types/jest": "^24.9.1",
