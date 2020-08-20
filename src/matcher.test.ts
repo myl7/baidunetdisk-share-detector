@@ -1,4 +1,4 @@
-import matcher from './matcher';
+import matcher from './matcher'
 
 it('regular copied share text', () => {
   expect(
@@ -9,22 +9,22 @@ it('regular copied share text', () => {
   ).toEqual({
     url: 'https://pan.baidu.com/s/1cIhV2wBM4o04RGfQlijERg',
     secret: '1234',
-  });
-});
+  })
+})
 
 it('simplified share text', () => {
   expect(matcher('s/1cIhV2wBM4o04RGfQl-_ERg 码：1234')).toEqual({
     url: 'https://pan.baidu.com/s/1cIhV2wBM4o04RGfQl-_ERg',
     secret: '1234',
-  });
-});
+  })
+})
 
 it('weird share text', () => {
   expect(matcher('/1cIhV2wBM4o04RGfQl-_ERg 1234')).toEqual({
     url: 'https://pan.baidu.com/s/1cIhV2wBM4o04RGfQl-_ERg',
     secret: '1234',
-  });
-});
+  })
+})
 
 it('share text with emoji', () => {
   expect(
@@ -34,5 +34,5 @@ it('share text with emoji', () => {
   ).toEqual({
     url: 'https://pan.baidu.com/s/1cIhV2wBM4o04RGfQlijERg',
     secret: '1234',
-  });
-});
+  })
+})

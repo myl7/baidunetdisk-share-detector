@@ -1,28 +1,22 @@
-export interface BaiduNetdiskInfo {
+const matcher = (text: string): {
   url: string;
   secret: string;
-}
-
-interface LinkMatcher {
-  regExp: RegExp;
-  complete: (matchedStr: string) => string;
-}
-
-type SecretMatcher = RegExp;
-
-const matcher = (text: string): BaiduNetdiskInfo | null => {
+} | null => {
   const emojiFilters = [
     /(\ud83c[\udf00-\udfff])|(\ud83d[\udc00-\ude4f\ude80-\udeff])|[\u2600-\u2B55]/g,
     / ?#\([\u4e00-\u9fa5]+\) ?/g,
-  ];
+  ]
 
   for (let emojiFilter of emojiFilters) {
-    text = text.replace(emojiFilter, '');
+    text = text.replace(emojiFilter, '')
   }
 
-  let url: string | null = null;
+  let url: string | null = null
 
-  const linkMatchers: LinkMatcher[] = [
+  const linkMatchers: {
+    regExp: RegExp;
+    complete: (matchedStr: string) => string;
+  }[] = [
     {
       regExp: /s\/[-_0-9a-zA-Z]+/,
       complete: (matchedStr) => 'https://pan.baidu.com/' + matchedStr,
@@ -31,37 +25,37 @@ const matcher = (text: string): BaiduNetdiskInfo | null => {
       regExp: /\/[-_0-9a-zA-Z]+/,
       complete: (matchedStr) => 'https://pan.baidu.com/s' + matchedStr,
     },
-  ];
+  ]
 
   for (let linkMatcher of linkMatchers) {
-    let linkMatch = linkMatcher.regExp.exec(text);
+    let linkMatch = linkMatcher.regExp.exec(text)
     if (linkMatch !== null) {
-      url = linkMatcher.complete(linkMatch[0]);
-      break;
+      url = linkMatcher.complete(linkMatch[0])
+      break
     }
   }
 
   if (url === null) {
-    return null;
+    return null
   }
 
-  let secret: string = '';
+  let secret: string = ''
 
-  const secretMatchers: SecretMatcher[] = [
+  const secretMatchers: RegExp[] = [
     /(?<=[码][:：])[0-9a-z]{4}\b/,
     /(?<=[-_0-9a-zA-Z]{16,}\s+)[0-9a-z{4}]{4}\b/,
     /\b[0-9a-z{4}]{4}\b/,
-  ];
+  ]
 
   for (let secretMatcher of secretMatchers) {
-    let secretMatch = secretMatcher.exec(text);
+    let secretMatch = secretMatcher.exec(text)
     if (secretMatch !== null) {
-      secret = secretMatch[0];
-      break;
+      secret = secretMatch[0]
+      break
     }
   }
 
-  return { url: url, secret: secret };
-};
+  return { url: url, secret: secret }
+}
 
-export default matcher;
+export default matcher
